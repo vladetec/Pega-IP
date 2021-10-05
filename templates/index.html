@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %} Pega-IP {% endblock %}
+
+{% block body %}
+
+<div class="container">
+ 
+  <br>
+  <br>
+
+  <h1>Pegando IP</h1>
+
+  <br>
+  <br>
+
+  <form action="{{url_for('Index')}}" method="post">
+
+      <div class="form-group">
+          <input type="text" name = "search" class="form-control" placeholder="Digite um IP para verificar">
+      </div>
+
+      <input type="submit" class="btn btn-primary" value="Pesquisar">
+
+  </form>
+
+  <br>
+  <br>
+
+  <p>Endereço IP : {{data.ip}}</p>
+  <p>Cidade: {{data.city}}</p>
+  <p>Pais: {{data.country}}</p>
+  <p>Lingua: {{data.languages[0:5]}}</p>
+  <p>Latitude : {{data.latitude}}</p>
+  <p>Longitude : {{data.longitude}}</p>
+  <p>Time Zone : {{data.timezone}}</p>
+  <p>Code Chamada: {{data.country_calling_code}}</p>
+  <p>Avaliação Corrente: {{data.currency}}</p>
+  <p>Internet : {{data.org}}</p>
+  <p>Continente : {{data.continent_code}}</p>
+  <p>Codigo Postal: {{data.postal}}</p>
+  <p>UTC Offset Is : {{data.utc_offset}}</p>
+
+</div>
+
+
+{% endblock %}
